@@ -1,0 +1,11 @@
+{
+  "name": "brumlow_io",
+  "homepage": "https://github.com/mbrumlow/brumlow_io",
+  "authors": [
+    "Michael Brumlow <mbrumlow@gmail.com>"
+  ],
+  "description": "Michael Brumlow's personal website.",
+  "main": "",
+  "license": "MIT",
+  "private": true
+}
