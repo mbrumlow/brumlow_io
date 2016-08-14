@@ -13,12 +13,14 @@ var httpPort = flag.Int("httpPort", 8080, "HTTP bind port")
 
 func main() {
 	flag.Parse()
-	d := dispatch.NewDispatch("")
+
+	d := dispatch.NewDispatch()
+	d.AddNamespace("/", http.FileServer(http.Dir("webroot/")))
+
 	http.Handle("/", d)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%v:%v", "", *httpPort), nil))
 }
 
-// TODO - Add signal to reload config
 // TODO - Setup hard coded name spaces; config, status, polymer.
 // ----------------------------------------------------------------------------
 //
